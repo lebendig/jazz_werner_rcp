@@ -1,0 +1,53 @@
+.jazz-theme {
+  background-color: #1a1a1a;
+  min-height: 100vh;
+  padding-top: 2rem;
+  color: #e6e6e6;
+
+  .btn-outline-light {
+    border-color: #c9a769;
+    color: #c9a769;
+
+    &:hover {
+      background-color: #c9a769;
+      color: #1a1a1a;
+    }
+  }
+
+  .drink-detail-card {
+    background-color: #262626;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .drink-title {
+    color: #c9a769;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1.5rem;
+  }
+
+  .drink-section {
+    margin-bottom: 2rem;
+
+    h2 {
+      color: #c9a769;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #c9a769;
+      padding-bottom: 0.5rem;
+    }
+
+    .drink-content {
+      white-space: pre-line;
+      line-height: 1.6;
+    }
+  }
+
+  img {
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+}

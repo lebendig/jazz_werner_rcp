@@ -1,0 +1,32 @@
+<div class="jazz-theme">
+  <div class="container">
+    <h1>{{ 'DRINKS.TITLE' | translate }}</h1>
+
+    <div class="controls">
+      <div class="language-switcher">
+        <button (click)="translationService.switchLanguage('en')"
+                [class.active]="translationService.getCurrentLanguage() === 'en'">EN</button>
+        <button (click)="translationService.switchLanguage('de')"
+                [class.active]="translationService.getCurrentLanguage() === 'de'">DE</button>
+      </div>
+
+      <input [(ngModel)]="searchQuery" (input)="search()"
+             [placeholder]="'DRINKS.SEARCH' | translate">
+
+      <button *ngIf="isAdmin" routerLink="/add-drink" class="btn btn-primary">
+        {{ 'DRINKS.ADD_DRINK' | translate }}
+      </button>
+    </div>
+
+    <div class="drink-grid">
+      <div *ngFor="let drink of filteredDrinks" class="drink-card" (click)="viewDrink(drink.id)">
+        <img [src]="drink.imageUrl" [alt]="translationService.getCurrentLanguage() === 'en' ? drink.nameEn : drink.nameDe">
+        <h3>{{ translationService.getCurrentLanguage() === 'en' ? drink.nameEn : drink.nameDe }}</h3>
+        <button *ngIf="isAdmin" (click)="deleteDrink(drink.id); $event.stopPropagation()"
+                class="btn btn-danger btn-sm">
+          {{ 'DRINKS.DELETE' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

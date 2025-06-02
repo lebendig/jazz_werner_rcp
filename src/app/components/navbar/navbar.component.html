@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark jazz-navbar">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <span class="jazz-brand">{{ 'APP.TITLE' | translate }}</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">{{ 'NAVBAR.HOME' | translate }}</a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin">
+          <a class="nav-link" routerLink="/add-drink">{{ 'NAVBAR.ADMIN' | translate }}</a>
+        </li>
+      </ul>
+
+      <div class="d-flex align-items-center">
+        <div class="language-switcher me-3">
+          <button class="btn btn-sm"
+                  [class.active]="translationService.getCurrentLanguage() === 'en'"
+                  (click)="switchLanguage('en')">EN</button>
+          <button class="btn btn-sm"
+                  [class.active]="translationService.getCurrentLanguage() === 'de'"
+                  (click)="switchLanguage('de')">DE</button>
+        </div>
+
+        <div *ngIf="authService.getToken(); else loginBtn">
+          <button class="btn btn-outline-light" (click)="logout()">
+            {{ 'NAVBAR.LOGOUT' | translate }}
+          </button>
+        </div>
+        <ng-template #loginBtn>
+          <a class="btn btn-outline-light" routerLink="/login">
+            {{ 'NAVBAR.LOGIN' | translate }}
+          </a>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</nav>

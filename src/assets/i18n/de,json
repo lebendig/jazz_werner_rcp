@@ -1,0 +1,45 @@
+{
+  "APP": {
+    "TITLE": "Jazzkeller Cocktails",
+    "DESCRIPTION": "Premium Cocktails aus Frankfurts legendärem Jazzkeller"
+  },
+  "DRINKS": {
+    "TITLE": "Cocktail Karte",
+    "SEARCH": "Getränke suchen...",
+    "INGREDIENTS": "Zutaten",
+    "PREPARATION": "Zubereitung",
+    "ADD_DRINK": "Getränk hinzufügen",
+    "DELETE": "Löschen",
+    "BACK": "Zurück zur Liste",
+    "EDIT_DRINK": "Getränk bearbeiten"
+  },
+  "COMMON": {
+    "SAVE": "Speichern",
+    "UPDATE": "Aktualisieren",
+    "CANCEL": "Abbrechen",
+    "EDIT": "Bearbeiten",
+    "DELETE_CONFIRM": "Möchten Sie dieses Getränk wirklich löschen?"
+  },
+  "LOGIN": {
+    "TITLE": "Anmeldung",
+    "USERNAME": "Benutzername",
+    "PASSWORD": "Passwort",
+    "SUBMIT": "Anmelden",
+    "ERROR": "Ungültiger Benutzername oder Passwort"
+  },
+  "NAVBAR": {
+    "HOME": "Startseite",
+    "LOGIN": "Anmelden",
+    "LOGOUT": "Abmelden",
+    "ADMIN": "Admin"
+  },
+  "ADD_DRINK": {
+    "NAME_EN": "Name (Englisch)",
+    "NAME_DE": "Name (Deutsch)",
+    "INGREDIENTS_EN": "Zutaten (Englisch)",
+    "INGREDIENTS_DE": "Zutaten (Deutsch)",
+    "PREPARATION_EN": "Zubereitung (Englisch)",
+    "PREPARATION_DE": "Zubereitung (Deutsch)",
+    "IMAGE_URL": "Bild URL"
+  }
+}

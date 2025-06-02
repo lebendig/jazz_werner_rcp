@@ -1,0 +1,63 @@
+<div class="jazz-theme">
+  <div class="container py-5">
+    <h1 class="mb-4">
+      {{ isEdit ? ('DRINKS.EDIT_DRINK' | translate) : ('DRINKS.ADD_DRINK' | translate) }}
+    </h1>
+
+    <form [formGroup]="drinkForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="nameEn" class="form-label">{{ 'ADD_DRINK.NAME_EN' | translate }}</label>
+            <input type="text" class="form-control jazz-input" id="nameEn" formControlName="nameEn">
+          </div>
+
+          <div class="mb-3">
+            <label for="ingredientsEn" class="form-label">{{ 'ADD_DRINK.INGREDIENTS_EN' | translate }}</label>
+            <textarea class="form-control jazz-input" id="ingredientsEn"
+                      formControlName="ingredientsEn" rows="4"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="preparationEn" class="form-label">{{ 'ADD_DRINK.PREPARATION_EN' | translate }}</label>
+            <textarea class="form-control jazz-input" id="preparationEn"
+                      formControlName="preparationEn" rows="6"></textarea>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="nameDe" class="form-label">{{ 'ADD_DRINK.NAME_DE' | translate }}</label>
+            <input type="text" class="form-control jazz-input" id="nameDe" formControlName="nameDe">
+          </div>
+
+          <div class="mb-3">
+            <label for="ingredientsDe" class="form-label">{{ 'ADD_DRINK.INGREDIENTS_DE' | translate }}</label>
+            <textarea class="form-control jazz-input" id="ingredientsDe"
+                      formControlName="ingredientsDe" rows="4"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="preparationDe" class="form-label">{{ 'ADD_DRINK.PREPARATION_DE' | translate }}</label>
+            <textarea class="form-control jazz-input" id="preparationDe"
+                      formControlName="preparationDe" rows="6"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label for="imageUrl" class="form-label">{{ 'ADD_DRINK.IMAGE_URL' | translate }}</label>
+        <input type="text" class="form-control jazz-input" id="imageUrl" formControlName="imageUrl">
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-outline-light" routerLink="/drinks">
+          {{ 'COMMON.CANCEL' | translate }}
+        </button>
+        <button type="submit" class="btn btn-primary" [disabled]="!drinkForm.valid">
+          {{ isEdit ? ('COMMON.UPDATE' | translate) : ('COMMON.SAVE' | translate) }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

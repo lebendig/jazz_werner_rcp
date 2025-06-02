@@ -1,0 +1,38 @@
+.jazz-theme {
+  background-color: #1a1a1a;
+  min-height: 100vh;
+  padding-top: 2rem;
+  color: #e6e6e6;
+
+  h1 {
+    color: #c9a769;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .jazz-input {
+    background-color: #262626;
+    border-color: #444;
+    color: #e6e6e6;
+
+    &:focus {
+      background-color: #262626;
+      color: #e6e6e6;
+      border-color: #c9a769;
+      box-shadow: 0 0 0 0.25rem rgba(201, 167, 105, 0.25);
+    }
+  }
+
+  .btn-outline-light {
+    border-color: #c9a769;
+    color: #c9a769;
+
+    &:hover {
+      background-color: #c9a769;
+      color: #1a1a1a;
+    }
+  }
+
+  label {
+    color: #c9a769;
+  }
+}

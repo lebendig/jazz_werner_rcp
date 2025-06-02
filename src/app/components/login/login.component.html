@@ -1,0 +1,25 @@
+<div class="login-container jazz-theme">
+  <div class="login-card">
+    <h1 class="text-center mb-4">{{ 'LOGIN.TITLE' | translate }}</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="username" class="form-label">{{ 'LOGIN.USERNAME' | translate }}</label>
+        <input type="text" class="form-control jazz-input" id="username" formControlName="username">
+      </div>
+
+      <div class="mb-4">
+        <label for="password" class="form-label">{{ 'LOGIN.PASSWORD' | translate }}</label>
+        <input type="password" class="form-control jazz-input" id="password" formControlName="password">
+      </div>
+
+      <div *ngIf="errorMessage" class="alert alert-danger mb-3">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100" [disabled]="!loginForm.valid">
+        {{ 'LOGIN.SUBMIT' | translate }}
+      </button>
+    </form>
+  </div>
+</div>

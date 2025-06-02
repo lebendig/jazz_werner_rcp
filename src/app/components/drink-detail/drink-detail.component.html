@@ -1,0 +1,34 @@
+<div class="jazz-theme">
+  <div class="container py-5">
+    <button class="btn btn-outline-light mb-4" routerLink="/drinks">
+      &larr; {{ 'DRINKS.BACK' | translate }}
+    </button>
+
+    <div class="drink-detail-card" *ngIf="drink">
+      <div class="row">
+        <div class="col-md-6">
+          <img [src]="drink.imageUrl" [alt]="getTranslatedField('name')" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+          <h1 class="drink-title">{{ getTranslatedField('name') }}</h1>
+
+          <div class="drink-section">
+            <h2>{{ 'DRINKS.INGREDIENTS' | translate }}</h2>
+            <p class="drink-content">{{ getTranslatedField('ingredients') }}</p>
+          </div>
+
+          <div class="drink-section">
+            <h2>{{ 'DRINKS.PREPARATION' | translate }}</h2>
+            <p class="drink-content">{{ getTranslatedField('preparation') }}</p>
+          </div>
+
+          <button *ngIf="isAdmin"
+                  [routerLink]="['/add-drink', drink.id]"
+                  class="btn btn-primary mt-3">
+            {{ 'COMMON.EDIT' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

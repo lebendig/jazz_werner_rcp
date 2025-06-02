@@ -1,0 +1,45 @@
+{
+  "APP": {
+    "TITLE": "Jazzkeller Cocktails",
+    "DESCRIPTION": "Premium Cocktails from Frankfurt's legendary Jazzkeller"
+  },
+  "DRINKS": {
+    "TITLE": "Cocktail Menu",
+    "SEARCH": "Search drinks...",
+    "INGREDIENTS": "Ingredients",
+    "PREPARATION": "Preparation",
+    "ADD_DRINK": "Add Drink",
+    "DELETE": "Delete",
+    "BACK": "Back to list",
+    "EDIT_DRINK": "Edit Drink"
+  },
+  "COMMON": {
+    "SAVE": "Save",
+    "UPDATE": "Update",
+    "CANCEL": "Cancel",
+    "EDIT": "Edit",
+    "DELETE_CONFIRM": "Are you sure you want to delete this drink?"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "SUBMIT": "Login",
+    "ERROR": "Invalid username or password"
+  },
+  "NAVBAR": {
+    "HOME": "Home",
+    "LOGIN": "Login",
+    "LOGOUT": "Logout",
+    "ADMIN": "Admin"
+  },
+  "ADD_DRINK": {
+    "NAME_EN": "Name (English)",
+    "NAME_DE": "Name (German)",
+    "INGREDIENTS_EN": "Ingredients (English)",
+    "INGREDIENTS_DE": "Ingredients (German)",
+    "PREPARATION_EN": "Preparation (English)",
+    "PREPARATION_DE": "Preparation (German)",
+    "IMAGE_URL": "Image URL"
+  }
+}
