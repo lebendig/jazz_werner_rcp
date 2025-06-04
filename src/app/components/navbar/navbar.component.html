@@ -21,10 +21,10 @@
       <div class="d-flex align-items-center">
         <div class="language-switcher me-3">
           <button class="btn btn-sm"
-                  [class.active]="translationService.getCurrentLanguage() === 'en'"
+                  [class.active]="currentLang === 'en'"
                   (click)="switchLanguage('en')">EN</button>
           <button class="btn btn-sm"
-                  [class.active]="translationService.getCurrentLanguage() === 'de'"
+                  [class.active]="currentLang === 'de'"
                   (click)="switchLanguage('de')">DE</button>
         </div>
 

@@ -15,7 +15,7 @@ const routes: Routes = [
     path: '',
     canActivate: [authGuard],  // Protege todas as rotas abaixo
     children: [
-      { path: '', component: LoginComponent },
+      { path: '', component: DrinkListComponent },
       { path: 'drinks', component: DrinkListComponent },
       { path: 'drinks/:id', component: DrinkDetailComponent },
       { path: 'add-drink', component: AddDrinkComponent, canActivate: [adminGuard] } // só admin

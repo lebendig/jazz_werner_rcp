@@ -1,45 +1,69 @@
 .login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  background-color: #1a1a1a;
-  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
 
 .login-card {
-  background-color: #262626;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
   padding: 2rem;
-  border-radius: 8px;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
 
-  h1 {
-    color: #c9a769;
-    font-family: 'Playfair Display', serif;
-  }
+.login-card h1 {
+  color: #f0c040;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
 
-  .jazz-input {
-    background-color: #333;
-    border-color: #444;
-    color: #e6e6e6;
+.form-label {
+  color: #f0c040;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
 
-    &:focus {
-      background-color: #333;
-      color: #e6e6e6;
-      border-color: #c9a769;
-      box-shadow: 0 0 0 0.25rem rgba(201, 167, 105, 0.25);
-    }
-  }
+.jazz-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(240, 192, 64, 0.3);
+  border-radius: 8px;
+  color: white;
+  padding: 0.75rem;
+}
 
-  label {
-    color: #c9a769;
-  }
+.jazz-input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #f0c040;
+  box-shadow: 0 0 0 0.2rem rgba(240, 192, 64, 0.25);
+  color: white;
+}
 
-  .alert-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    color: white;
-  }
+.jazz-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #f0c040, #d4a132);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(45deg, #d4a132, #b8922b);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(240, 192, 64, 0.3);
+}
+
+.btn-primary:disabled {
+  background: rgba(240, 192, 64, 0.3);
+  cursor: not-allowed;
 }

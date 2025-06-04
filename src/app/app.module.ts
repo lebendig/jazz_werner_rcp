@@ -8,15 +8,24 @@ import { DrinkDetailComponent } from './components/drink-detail/drink-detail.com
 import { AddDrinkComponent } from './components/add-drink/add-drink.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { JwtInterceptor, JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { JwtModule, JwtHelperService } from '@auth0/angular-jwt';
+
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { AppTranslateService } from './services/translate.service';
 
+// Função que retorna o token armazenado
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
+// Função de carregamento de traduções
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -42,12 +51,17 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
+    }),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ['localhost:4200'], // ajuste conforme sua API
+        disallowedRoutes: [] // adicione rotas públicas se necessário
+      }
     })
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService,
     AppTranslateService
   ],
